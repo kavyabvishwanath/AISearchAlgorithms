@@ -34,6 +34,7 @@ public class NQueensWithObstacles {
     100
      */
 
+   
     static int[][] treecolumns,treerows;
     static Node[][] nd,pd;
     private static final String FILENAME = "input.txt";//nqueens/ai/searchalgos/input.txt";
