@@ -1,0 +1,44 @@
+This project is implementation of modified NQueens problem with obstacles. 
+
+Three search algorithms DFS,BFS(uninformed search) and Simulated Annealing(local search) were used and tested for the performance
+
+Usage :  input.txt should be present in the current directory
+
+Compile using :
+
+$ javac NQueensWithObstacles.java 
+
+Run :
+
+$ java NQueensWithObstacles
+
+DFS Implementation details :
+
+1. Each search step is adding a new node the virtual tree(built using stack), a path from the current node to the root gives the positions of queens till the point, entire matrix is not stored at any step. Example for the below example to place 3 queens in 3x3 matrix with two obstacles at (1,0) and (1,1)
+
+___
+22_
+___
+
+Search Tree :
+
+                     (-1 , -1)
+                  /    |   |     \
+             (0,0)   (0,1)  (0,2) (-1,-1)
+           /   \
+      (1,2)   (-1,-1)
+    /   |  \
+(2,0)
+
+Note (-1,-1) Node added at each stage, because it is possible that there can be no queens in that row. Solution for the above problem is (2,0) -> (1,2) -> (0,0) -> (-1,-1)(ROOT)
+
+2. The implementation can handle NQueens matrix of upto 30x30 efficiently with no obstacles.
+
+BFS Implementation details :
+
+1. BFS implementation is similar to DFS except for the datastructure and the way nodes are inserted and poped out. Queque is used in this case where nodes follow FIFO order. 
+2. The implementation can handle NQueens matrix till 13x13 efficiently
+
+Simulated Annealing :
+
+Its a local search algorithm and Logarthimically dependent degrading function is used to accept the transition probability. Even for matrices with higher dimensions with many obstacles Simulated Annelaing outperforms either of the search algorithms above as it doesn't have space complexity issues and random walk converges to global maximum with increase in the number of obstacles and decrease in the number of available positions for queens
