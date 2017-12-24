@@ -1,6 +1,4 @@
-This project is implementation of modified NQueens problem with obstacles. 
-
-Three search algorithms DFS,BFS(uninformed search) and Simulated Annealing(local search) were used and tested for the performance
+This project is implementation of modified NQueens problem with obstacles. Three search algorithms DFS,BFS(uninformed search) and Simulated Annealing(local search) were used and tested for the performance
 
 Usage :  input.txt should be present in the current directory
 
